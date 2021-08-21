@@ -39,8 +39,7 @@ class NetworkCommonMixIn():
 
     def set_trainable(self, trainable=False):
         for p in self.parameters():
-            if p.requires_grad:
-                p.requires_grad = trainable
+            p.requires_grad = trainable
 
 
 
