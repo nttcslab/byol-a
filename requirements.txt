@@ -6,3 +6,4 @@ librosa
 fire
 easydict
 pandas
+tqdm

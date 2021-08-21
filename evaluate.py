@@ -24,10 +24,14 @@ import multiprocessing
 import torch
 import logging
 import re
+from tqdm import tqdm
 
 from sklearn.preprocessing import StandardScaler
 #from sklearn.neural_network import MLPClassifier
-from utils.torch_mlp_clf import TorchMLPClassifier
+try:
+    from utils.torch_mlp_clf import TorchMLPClassifier
+except:
+    raise Exception('Please follow Getting Started on the README.md to download and patch external modules.')
 from utils.downstream_tasks import create_data_source
 from utils import append_to_csv
 from byol_a.common import seed_everything, load_yaml_config
@@ -36,7 +40,7 @@ from byol_a.dataset import WaveInLMSOutDataset
 from byol_a.models import AudioNTT2020
 
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.DEBUG)
 device = torch.device('cuda')
 
 
@@ -61,7 +65,7 @@ def calc_norm_stats(cfg, data_src, n_stats=10000):
     logging.info(f'Calculating mean/std using random {n_stats} samples from training population {len(stats_data)} samples...')
     sample_idxes = np.random.choice(range(len(stats_data)), size=n_stats, replace=False)
     ds = WaveInLMSOutDataset(cfg, stats_data.files, labels=None, tfms=None)
-    X = [ds[i] for i in sample_idxes]
+    X = [ds[i] for i in tqdm(sample_idxes)]
     X = np.hstack(X)
     norm_stats = np.array([X.mean(), X.std()])
     logging.info(f'  ==> mean/std: {norm_stats}, {norm_stats.shape} <- {X.shape}')
@@ -91,14 +95,13 @@ def get_embeddings(cfg, files, model, norm_stats):
     """
 
     ds = WaveInLMSOutDataset(cfg, files, labels=None, tfms=PrecomputedNorm(norm_stats))
-    dl = torch.utils.data.DataLoader(ds, batch_size=cfg.bs, num_workers=multiprocessing.cpu_count(),
-                                     pin_memory=True, shuffle=False, drop_last=False)
+    dl = torch.utils.data.DataLoader(ds, batch_size=cfg.bs, num_workers=cfg.num_workers,
+                                     pin_memory=False, shuffle=False, drop_last=False)
     embs = []
     with torch.no_grad():
-        for X in dl:
+        for X in tqdm(dl):
             Y = model(X.to(device)).cpu().detach()
-            for y in Y.numpy():
-                embs.append(y)
+            embs.extend(Y.numpy())
     return np.array(embs)
 
 
@@ -107,17 +110,18 @@ def _one_linear_eval(X, y, X_val, y_val, X_test, y_test, hidden_sizes, epochs, e
 
     if len(X_test.shape) > 2:
         X = X.mean(axis=1)
+        X_test = X_test.mean(axis=1)
     scaler = StandardScaler()
     scaler.fit(X)
     X = scaler.transform(X)
+    if X_val is not None:
+        X_val = scaler.transform(X_val)
 
     clf_cls = TorchMLPClassifier
     clf = clf_cls(hidden_layer_sizes=hidden_sizes, max_iter=epochs,
                   early_stopping=early_stopping, debug=debug)
     clf.fit(X, y, X_val=X_val, y_val=y_val)
 
-    if len(X_test.shape) > 2:
-        X_test = X_test.mean(axis=1)
     X_test = scaler.transform(X_test)
     score = clf.score(X_test, y_test)
     return score
