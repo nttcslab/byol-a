@@ -24,7 +24,6 @@ import multiprocessing
 import torch
 import logging
 import re
-from tqdm import tqdm
 
 from sklearn.preprocessing import StandardScaler
 #from sklearn.neural_network import MLPClassifier
@@ -200,7 +199,7 @@ def prepare_linear_evaluation(weight_file, ds_task, unit_sec, n_stats=10000):
     cfg.feature_d = get_model_feature_d(weight_file)
     print(cfg)
 
-    model = AudioNTT2020(d=cfg.feature_d)
+    model = AudioNTT2020(n_mels=cfg.n_mels, d=cfg.feature_d)
     model.load_weight(weight_file, device)
     data = create_data_source(ds_task)
 
