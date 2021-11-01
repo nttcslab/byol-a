@@ -77,7 +77,7 @@ class WaveInLMSOutDataset(Dataset):
             wav = F.pad(wav, (half_adj, length_adj - half_adj))
 
         # random crop unit length wave
-        length_adj = self.unit_length - len(wav)
+        length_adj = len(wav) - self.unit_length
         start = random.randint(0, length_adj) if length_adj > 0 else 0
         wav = wav[start:start + self.unit_length]
 
