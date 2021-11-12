@@ -64,7 +64,7 @@ class BYOLALearner(pl.LightningModule):
         def to_np(A): return [a.cpu().numpy() for a in A]
 
         bs = paired_inputs[0].shape[0]
-        paired_inputs = torch.cat(paired_inputs) # [(B,1,T,F), (B,1,T,F)] -> (2*B,1,T,F)
+        paired_inputs = torch.cat(paired_inputs) # [(B,1,F,T), (B,1,F,T)] -> (2*B,1,F,T)
         mb, sb = to_np((paired_inputs.mean(), paired_inputs.std()))
         paired_inputs = self.post_norm(paired_inputs)
         ma, sa = to_np((paired_inputs.mean(), paired_inputs.std()))
