@@ -66,6 +66,12 @@ You can also run an evaluation multiple times and take an average result. Follow
 python evaluate.py pretrained_weights/AudioNTT2020-BYOLA-64x96d2048.pth us8k 4.0 10
 ```
 
+Similarly, the following evaluates on NSynth (4.0 seconds long) 10 times.
+
+```shell
+python evaluate.py pretrained_weights/AudioNTT2020-BYOLA-64x96d2048.pth nsynth 4.0 10
+```
+
 ### Evaluating Representations In Your Tasks
 
 This is an example to calculate a feature vector for an audio sample.
