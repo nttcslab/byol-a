@@ -11,7 +11,7 @@ This is a demo implementation of BYOL for Audio (BYOL-A), a self-supervised lear
 If you find BYOL-A useful in your research, please use the following BibTeX entry for citation.
 
 ```BibTeX
-@misc{niizumi2021byol-a,
+@inproceedings{niizumi2021byol-a,
       title={BYOL for Audio: Self-Supervised Learning for General-Purpose Audio Representation}, 
       author={Daisuke Niizumi and Daiki Takeuchi and Yasunori Ohishi and Noboru Harada and Kunio Kashino},
       booktitle = {2021 International Joint Conference on Neural Networks, {IJCNN} 2021},
