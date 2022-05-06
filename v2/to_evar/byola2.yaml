@@ -1,0 +1,20 @@
+# AR parameters such as FFT parameters.
+audio_repr: ar_byola2.AR_BYOLA2
+weight_file: ../AudioNTT2022-BYOLA-64x96d2048.pth
+feature_d: 3072
+sample_rate: 16000
+n_fft: 1024
+window_size: 1024
+hop_size: 160
+n_mels: 64
+f_min: 60
+f_max: 7800
+temporal_pooling_type: mean_max
+
+# Training parameters.
+batch_size: 256
+lr_lineareval: 0.0003
+# not ready lr_finetune_frozen: 0.001
+# not ready lr_finetune_finetune: 0.001
+report_per_epochs: 20
+early_stop_epochs: 20

@@ -1,6 +1,6 @@
 ![key_visual](byol-a-key-visual.png)
 
-# BYOL for Audio: Self-Supervised Learning for General-Purpose Audio Representation
+# BYOL for Audio: Exploring Pre-trained General-purpose Audio Representations
 
 This is a demo implementation of BYOL for Audio (BYOL-A), a self-supervised learning method for general-purpose audio representation, includes:
 
@@ -8,7 +8,9 @@ This is a demo implementation of BYOL for Audio (BYOL-A), a self-supervised lear
 - Evaluation code that can evaluate trained models with downstream tasks.
 - Pretrained weights.
 
-If you find BYOL-A useful in your research, please use the following BibTeX entry for citation.
+UPDATE: We have two papers for BYOL-A.
+If you find BYOL-A useful in your research, please use either of the following BibTeX entries for citation.
+The former is the first paper from IJCNN2021, and the latter is currently under review.
 
 ```BibTeX
 @inproceedings{niizumi2021byol-a,
@@ -21,6 +23,32 @@ If you find BYOL-A useful in your research, please use the following BibTeX entr
       primaryClass={eess.AS}
 }
 ```
+
+```BibTeX
+@article{niizumi2022byol-a,
+    title={BYOL for Audio: Exploring Pre-trained General-purpose Audio Representations},
+    author={Daisuke Niizumi and Daiki Takeuchi and Yasunori Ohishi and Noboru Harada and Kunio Kashino},
+    journal={arXiv preprint arXiv:2204.07402},
+    year={2022},
+    archivePrefix={arXiv},
+    primaryClass={eess.AS}
+}
+```
+
+## What is the difference between the papers?
+
+We've added an augmentation block and updated network architecture.
+
+We introduced an extra augmentation block, Random Linear Fader, in the 2022 version.
+![aug-history](byol-a-aug-history.png)
+
+We reduced the number of convolutional blocks from three to two and added a skip connection at a new Concat block on the 2022 version.
+![network-history](byol-a-network-history.png)
+
+- For IJCNN2021, codes have not been changed; please find the details in this README.
+- For the 2022 version, 👉  please find codes in the [v2](v2) folder.
+
+---
 
 ## Getting Started
 
