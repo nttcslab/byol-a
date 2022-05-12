@@ -36,7 +36,7 @@ This sub-repository provides code of the new version of BYOL-A, which updates:
     mv byol_pytorch.py byol_a2
     ```
 
-2. Install [PyTorch 1.7.1](https://pytorch.org/get-started/locally/), torchaudio, and other dependencies listed on [requirements.txt](requirements.txt).
+2. Install [PyTorch 1.7.1](https://pytorch.org/get-started/locally/), torchaudio, and other dependencies listed on [requirements.txt](../requirements.txt).
 
 ## 2. Training From Scratch
 
