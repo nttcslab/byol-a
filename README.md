@@ -14,13 +14,14 @@ The former is the first paper from IJCNN2021, and the latter is currently under 
 
 ```BibTeX
 @inproceedings{niizumi2021byol-a,
-      title={BYOL for Audio: Self-Supervised Learning for General-Purpose Audio Representation}, 
-      author={Daisuke Niizumi and Daiki Takeuchi and Yasunori Ohishi and Noboru Harada and Kunio Kashino},
-      booktitle = {2021 International Joint Conference on Neural Networks, {IJCNN} 2021},
-      year={2021},
-      eprint={2103.06695},
-      archivePrefix={arXiv},
-      primaryClass={eess.AS}
+    title={BYOL for Audio: Self-Supervised Learning for General-Purpose Audio Representation},
+    author={Daisuke Niizumi and Daiki Takeuchi and Yasunori Ohishi and Noboru Harada and Kunio Kashino},
+    booktitle = {2021 International Joint Conference on Neural Networks (IJCNN)},
+    publisher={IEEE},
+    DOI={10.1109/ijcnn52387.2021.9534474},
+    url={http://dx.doi.org/10.1109/IJCNN52387.2021.9534474},
+    year={2021},
+    month={Jul}
 }
 ```
 
@@ -30,6 +31,7 @@ The former is the first paper from IJCNN2021, and the latter is currently under 
     author={Daisuke Niizumi and Daiki Takeuchi and Yasunori Ohishi and Noboru Harada and Kunio Kashino},
     journal={arXiv preprint arXiv:2204.07402},
     year={2022},
+    url={https://arxiv.org/abs/2204.07402},
     archivePrefix={arXiv},
     primaryClass={eess.AS}
 }
