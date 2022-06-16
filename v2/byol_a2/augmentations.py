@@ -92,7 +92,7 @@ class MixupBYOLA(nn.Module):
         log_mixup_exp: Use log-mixup-exp to mix if this is True, or mix without notion of log-scale.
     """
 
-    def __init__(self, ratio=0.2, n_memory=512, log_mixup_exp=True):
+    def __init__(self, ratio=0.2, n_memory=2048, log_mixup_exp=True):
         super().__init__()
         self.ratio = ratio
         self.n = n_memory

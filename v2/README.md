@@ -122,7 +122,7 @@ We use our evaluation package [EVAR (nttcslab/eval-audio-repr)](https://github.c
     ln -s ../../to_evar/byola2.yaml config
     ```
 
-2. Setup data (CSV files in the folder `evar/evar/metadata/*.csv` and 16 kHz datassamples in the folder `evar/work/16k`), you need copies of datasets for evaluating models. See EVAR documents, `evar/README.md`, and `evar/Preparing-datasets.md` for more information.
+2. Setup metadata (CSV files in the folder `evar/evar/metadata/*.csv`) and data samples (in the folder `evar/work/16k`); you need copies of datasets for evaluating models. See EVAR documents, [evar/README.md](https://github.com/nttcslab/eval-audio-repr/blob/main/README.md#2-setup), and [evar/Preparing-datasets.md](https://github.com/nttcslab/eval-audio-repr/blob/main/Preparing-datasets.md) for more information.
 
 3. As a test, run the following command under the folder `evar`. This uses the pre-trained weight `v2/AudioNTT2022-BYOLA-64x96d2048.pth`. If you find accuracy result of about 0.64, your setup should be successful.
 
