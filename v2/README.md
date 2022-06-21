@@ -8,12 +8,13 @@
     author={Daisuke Niizumi and Daiki Takeuchi and Yasunori Ohishi and Noboru Harada and Kunio Kashino},
     journal={arXiv preprint arXiv:2204.07402},
     year={2022},
+    url={https://arxiv.org/abs/2204.07402},
     archivePrefix={arXiv},
     primaryClass={eess.AS}
 }
 ```
 
-This sub-repository provides code of the new version of BYOL-A, which updates:
+This sub-repository provides code of the [new version of BYOL-A](https://arxiv.org/abs/2204.07402), which updates:
 
 - The augmentation module and network structure are extended.
 - We evaluate our models using [EVAR](https://github.com/nttcslab/eval-audio-repr), enabling comparison with other publicly available pre-trained audio models on various downstream tasks.
@@ -52,7 +53,9 @@ python train_v2.py work/16k/fsd50k/FSD50K.dev_audio
 
 ### 3-1. Evaluating Representations In Your Tasks
 
-This is an example to calculate a feature vector for an audio sample.
+This example shows how to extract a feature vector of an audio sample from [SPCV2](https://arxiv.org/abs/1804.03209).
+
+*NOTE:* You need to calculate the statistics (mean and std) for normalization in advance, such as `stats` found below.
 
 ```python
 from byol_a2.common import load_yaml_config
@@ -66,8 +69,11 @@ device = torch.device('cuda')
 cfg = load_yaml_config('config_v2.yaml')
 print(cfg)
 
-# Mean and standard deviation of the log-mel spectrogram of input audio samples, pre-computed.
-# Unlike the previous example, this example use the values from runtime EVAR terminal output.
+# ** Prepare the statistics in advance **
+# The followings are mean and standard deviation of the log-mel spectrogram of input audio samples.
+# For the SPCV2, this is calculated by using the EVAR terminal output:
+#     > byol-a/v2/evar$ python lineareval.py config/byola2.yaml spcv2
+#     >   :
 #     > using spectrogram norimalization stats: [-9.660292   4.7219563]
 stats = [-9.660292, 4.7219563]
 

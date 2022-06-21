@@ -10,7 +10,7 @@ This is a demo implementation of BYOL for Audio (BYOL-A), a self-supervised lear
 
 UPDATE: We have two papers for BYOL-A.
 If you find BYOL-A useful in your research, please use either of the following BibTeX entries for citation.
-The former is the first paper from IJCNN2021, and the latter is currently under review.
+The former is the first paper from IJCNN2021 ([LINK to IEEE Xplore](http://dx.doi.org/10.1109/IJCNN52387.2021.9534474)), and the latter is currently under review ([LINK to arxiv](https://arxiv.org/abs/2204.07402)).
 
 ```BibTeX
 @inproceedings{niizumi2021byol-a,
@@ -116,7 +116,8 @@ device = torch.device('cuda')
 cfg = load_yaml_config('config.yaml')
 print(cfg)
 
-# Mean and standard deviation of the log-mel spectrogram of input audio samples, pre-computed.
+# ** Prepare the statistics in advance **
+# You need to calculate the statistics of mean and standard deviation of the log-mel spectrogram of your dataset.
 # See calc_norm_stats in evaluate.py for your reference.
 stats = [-5.4919195,  5.0389895]
 
