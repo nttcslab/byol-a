@@ -8,7 +8,9 @@ This is a demo implementation of BYOL for Audio (BYOL-A), a self-supervised lear
 - Evaluation code that can evaluate trained models with downstream tasks.
 - Pretrained weights.
 
-UPDATE: We have two papers for BYOL-A.
+UPDATE (Nov, 2022): New model definitions ([AudioNTT2020X, AudioNTT2020Task6X](byol_a/models.py#L105)) are ready. These are for making all layer features accessible so that the weighted sum of layer features can be available in [SUPERB](https://github.com/s3prl/s3prl/blob/master/s3prl/downstream/docs/superb.md).
+
+UPDATE (May, 2022): We have two papers for BYOL-A.
 If you find BYOL-A useful in your research, please use either of the following BibTeX entries for citation.
 The former is the first paper from IJCNN2021 ([LINK to IEEE Xplore](http://dx.doi.org/10.1109/IJCNN52387.2021.9534474)), and the latter is currently under review ([LINK to arxiv](https://arxiv.org/abs/2204.07402)).
 
