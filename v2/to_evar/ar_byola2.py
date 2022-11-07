@@ -18,7 +18,7 @@ class AR_BYOLA2(BaseAudioRepr):
         self.to_feature = ToLogMelSpec(cfg)
 
         self.body = AudioNTT2022Encoder(n_mels=cfg.n_mels, d=cfg.feature_d)
-        if cfg.weight_file is not None:
+        if cfg.weight_file is not None and cfg.weight_file != '':
             load_pretrained_weights(self.body, cfg.weight_file, model_key='body')
 
     def precompute(self, device, data_loader):

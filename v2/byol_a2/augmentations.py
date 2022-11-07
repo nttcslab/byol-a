@@ -153,11 +153,11 @@ class RunningMean:
 
     def put(self, x):
         # https://math.stackexchange.com/questions/106700/incremental-averageing
-        if self.n == 0:
+        self.n += 1
+        if self.n == 1:
             self.mu = x.mean(self.axis, keepdims=True)
         else:
             self.mu += (x.mean(self.axis, keepdims=True) - self.mu) / self.n
-        self.n += 1
 
     def __call__(self):
         return self.mu
