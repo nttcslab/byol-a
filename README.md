@@ -29,13 +29,15 @@ The former is the first paper from IJCNN2021 ([LINK to IEEE Xplore](http://dx.do
 
 ```BibTeX
 @article{niizumi2022byol-a,
-    title={BYOL for Audio: Exploring Pre-trained General-purpose Audio Representations},
+    title={{BYOL for Audio}: Exploring Pre-trained General-purpose Audio Representations},
     author={Daisuke Niizumi and Daiki Takeuchi and Yasunori Ohishi and Noboru Harada and Kunio Kashino},
-    journal={arXiv preprint arXiv:2204.07402},
+    journal={IEEE/ACM Transactions on Audio, Speech, and Language Processing}, 
     year={2022},
-    url={https://arxiv.org/abs/2204.07402},
-    archivePrefix={arXiv},
-    primaryClass={eess.AS}
+    volume={},
+    number={},
+    pages={1-15},
+    doi={10.1109/TASLP.2022.3221007},
+    url={https://arxiv.org/abs/2204.07402}
 }
 ```
 
