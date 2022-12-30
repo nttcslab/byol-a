@@ -8,11 +8,13 @@ This is a demo implementation of BYOL for Audio (BYOL-A), a self-supervised lear
 - Evaluation code that can evaluate trained models with downstream tasks.
 - Pretrained weights.
 
+UPDATE (Dec, 2022): The v2 is now [published on TASLP](http://dx.doi.org/10.1109/TASLP.2022.3221007)! We updated BibTeX.
+
 UPDATE (Nov, 2022): New model definitions ([AudioNTT2020X, AudioNTT2020Task6X](byol_a/models.py#L105)) are ready. These are for making all layer features accessible so that the weighted sum of layer features can be available in [SUPERB](https://github.com/s3prl/s3prl/blob/master/s3prl/downstream/docs/superb.md).
 
 UPDATE (May, 2022): We have two papers for BYOL-A.
 If you find BYOL-A useful in your research, please use either of the following BibTeX entries for citation.
-The former is the first paper from IJCNN2021 ([LINK to IEEE Xplore](http://dx.doi.org/10.1109/IJCNN52387.2021.9534474)), and the latter is currently under review ([LINK to arxiv](https://arxiv.org/abs/2204.07402)).
+The former is the first paper from IJCNN2021 ([LINK to IEEE Xplore](http://dx.doi.org/10.1109/IJCNN52387.2021.9534474)), and the latter is ~~currently under review ([LINK to arxiv](https://arxiv.org/abs/2204.07402))~~ [published on TASLP](http://dx.doi.org/10.1109/TASLP.2022.3221007)!.
 
 ```BibTeX
 @inproceedings{niizumi2021byol-a,
@@ -28,16 +30,18 @@ The former is the first paper from IJCNN2021 ([LINK to IEEE Xplore](http://dx.do
 ```
 
 ```BibTeX
-@article{niizumi2022byol-a,
+@article{niizumi2023byol-a,
     title={{BYOL for Audio}: Exploring Pre-trained General-purpose Audio Representations},
-    author={Daisuke Niizumi and Daiki Takeuchi and Yasunori Ohishi and Noboru Harada and Kunio Kashino},
+    author={Niizumi, Daisuke and Takeuchi, Daiki and Ohishi, Yasunori and Harada, Noboru and Kashino, Kunio},
     journal={IEEE/ACM Transactions on Audio, Speech, and Language Processing}, 
-    year={2022},
-    volume={},
+    publisher={Institute of Electrical and Electronics Engineers (IEEE)},
+    year={2023},
+    volume={31},
     number={},
-    pages={1-15},
+    pages={137–151} 
     doi={10.1109/TASLP.2022.3221007},
-    url={https://arxiv.org/abs/2204.07402}
+    url={http://dx.doi.org/10.1109/TASLP.2022.3221007},
+    ISSN={2329-9304},
 }
 ```
 
@@ -45,14 +49,16 @@ The former is the first paper from IJCNN2021 ([LINK to IEEE Xplore](http://dx.do
 
 We've added an augmentation block and updated network architecture.
 
-We introduced an extra augmentation block, Random Linear Fader, in the 2022 version.
+We introduced an extra augmentation block, Random Linear Fader, in the 2022 version (TASLP2023).
+
 ![aug-history](byol-a-aug-history.png)
 
 We reduced the number of convolutional blocks from three to two and added a skip connection at a new Concat block on the 2022 version.
+
 ![network-history](byol-a-network-history.png)
 
 - For IJCNN2021, codes have not been changed; please find the details in this README.
-- For the 2022 version, 👉  please find codes in the [v2](v2) folder.
+- For TASLP2023(2022 version), 👉  please find codes in the [v2](v2) folder.
 
 ---
 

@@ -3,14 +3,18 @@
 # BYOL for Audio: Exploring Pre-trained General-purpose Audio Representations
 
 ```BibTeX
-@article{niizumi2022byol-a,
-    title={BYOL for Audio: Exploring Pre-trained General-purpose Audio Representations},
-    author={Daisuke Niizumi and Daiki Takeuchi and Yasunori Ohishi and Noboru Harada and Kunio Kashino},
-    journal={arXiv preprint arXiv:2204.07402},
-    year={2022},
-    url={https://arxiv.org/abs/2204.07402},
-    archivePrefix={arXiv},
-    primaryClass={eess.AS}
+@article{niizumi2023byol-a,
+    title={{BYOL for Audio}: Exploring Pre-trained General-purpose Audio Representations},
+    author={Niizumi, Daisuke and Takeuchi, Daiki and Ohishi, Yasunori and Harada, Noboru and Kashino, Kunio},
+    journal={IEEE/ACM Transactions on Audio, Speech, and Language Processing}, 
+    publisher={Institute of Electrical and Electronics Engineers (IEEE)},
+    year={2023},
+    volume={31},
+    number={},
+    pages={137–151} 
+    doi={10.1109/TASLP.2022.3221007},
+    url={http://dx.doi.org/10.1109/TASLP.2022.3221007},
+    ISSN={2329-9304},
 }
 ```
 
