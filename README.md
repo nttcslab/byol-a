@@ -14,7 +14,7 @@ UPDATE (Nov, 2022): New model definitions ([AudioNTT2020X, AudioNTT2020Task6X](b
 
 UPDATE (May, 2022): We have two papers for BYOL-A.
 If you find BYOL-A useful in your research, please use either of the following BibTeX entries for citation.
-The former is the first paper from IJCNN2021 ([LINK to IEEE Xplore](http://dx.doi.org/10.1109/IJCNN52387.2021.9534474)), and the latter is ~~currently under review ([LINK to arxiv](https://arxiv.org/abs/2204.07402))~~ [published on TASLP](http://dx.doi.org/10.1109/TASLP.2022.3221007)!.
+The former is the first paper from IJCNN2021 ([LINK to IEEE Xplore](http://dx.doi.org/10.1109/IJCNN52387.2021.9534474)), and the latter is ~~currently under review ([LINK to arxiv](https://arxiv.org/abs/2204.07402))~~ [published on TASLP](http://dx.doi.org/10.1109/TASLP.2022.3221007)!
 
 ```BibTeX
 @inproceedings{niizumi2021byol-a,
@@ -37,11 +37,10 @@ The former is the first paper from IJCNN2021 ([LINK to IEEE Xplore](http://dx.do
     publisher={Institute of Electrical and Electronics Engineers (IEEE)},
     year={2023},
     volume={31},
-    number={},
-    pages={137–151} 
+    pages={137–151},
     doi={10.1109/TASLP.2022.3221007},
     url={http://dx.doi.org/10.1109/TASLP.2022.3221007},
-    ISSN={2329-9304},
+    ISSN={2329-9304}
 }
 ```
 
