@@ -10,11 +10,10 @@
     publisher={Institute of Electrical and Electronics Engineers (IEEE)},
     year={2023},
     volume={31},
-    number={},
-    pages={137–151} 
+    pages={137–151},
     doi={10.1109/TASLP.2022.3221007},
     url={http://dx.doi.org/10.1109/TASLP.2022.3221007},
-    ISSN={2329-9304},
+    ISSN={2329-9304}
 }
 ```
 
